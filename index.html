@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title>JS-Sgroup</title>
+    <style>
+        .loading {
+            position: fixed;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            z-index: 99;
+            background: rgba(0, 0, 0, 0.4)
+        }
+
+        .loading--hidden {
+            animation: 2s fadeOut;
+            /* forwards: sau khi animation hoàn tất, trạng thái elm nayf trả về trạng thái cuối cùng(lúc 100%) */
+            animation-fill-mode: forwards;
+        }
+
+        @keyframes fadeOut {
+            100% {
+                opacity: 0;
+                visibility: hidden;
+            }
+        }
+
+        .loading__icon {
+            width: 70px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%)
+        }
+    </style>
+</head>
+
+<body>
+    <div class="loading loading--hidden">
+        <img class="loading__icon" src="./loading.gif" alt="Loading">
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col s12">
+                <ul class="collapsible">
+                    <!-- BT1 -->
+                    <li>
+                        <div class="collapsible-header"><i class="material-icons red-text">whatshot</i>BT1: Viết chương
+                            trình để
+                            hiện thị ngày giờ</div>
+                        <div class="collapsible-body">
+                            <div class="row">
+                                <div class="input-field col s6">
+                                    <input disabled placeholder="Placeholder" id="input1" type="text" class="validate">
+                                    <label for="input1">Không nhập gì cả</label>
+                                </div>
+                                <div class="input-field col s6">
+                                    <input placeholder="Placeholder" id="output1" type="text" class="validate">
+                                    <label for="output1">Kết quả</label>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <!-- BT2 -->
+                    <li>
+                        <div class="collapsible-header"><i class="material-icons red-text">whatshot</i>BT2: in ra ngày
+                            tháng năm
+                            theo các định dạng mm-dd-
+                            yyyy, mm/dd/yyyy, dd-mm-yyyy, dd/mm/yyyy</div>
+                        <div class="collapsible-body">
+                            <div class="row">
+                                <div class="input-field col s6">
+                                    <input disabled placeholder="Placeholder" id="input2" type="text" class="validate">
+                                    <label for="input2">Không nhập gì cả</label>
+                                </div>
+                                <div class="input-field col s6">
+                                    <input placeholder="Placeholder" id="output2" type="text" class="validate">
+                                    <label for="output2">Kết quả</label>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <!-- BT3 -->
+                    <li>
+                        <div class="collapsible-header"><i class="material-icons red-text">whatshot</i>BT3: Kiểm tra xem
+                            một
+                            số nguyên đã cho có chuỗi chữ
+                            số tăng hay không</div>
+                        <div class="collapsible-body">
+                            <div class="row">
+                                <div class="input-field col s6">
+                                    <input placeholder="Placeholder" id="input3" type="text" class="validate">
+                                    <label for="input3">Vui lòng nhập một chuối số</label>
+                                </div>
+                                <div class="input-field col s6">
+                                    <input placeholder="Placeholder" id="output3" type="text" class="validate">
+                                    <label for="output3">Kết quả</label>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <!-- BT4 -->
+                    <li>
+                        <div class="collapsible-header"><i class="material-icons red-text">whatshot</i>BT4: Thay thế mọi
+                            ký tự
+                            trong
+                            một chuỗi đã
+                            cho với ký tự theo sau nó trong bảng chữ cái.</div>
+                        <div class="collapsible-body">
+                            <div class="row">
+                                <div class="input-field col s6">
+                                    <input placeholder="Placeholder" id="input4" type="text" class="validate">
+                                    <label for="input4">Vui lòng nhập một chuỗi kí tự</label>
+                                </div>
+                                <div class="input-field col s6">
+                                    <input placeholder="Placeholder" id="output4" type="text" class="validate">
+                                    <label for="output4">Kết quả</label>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <!-- BT5 -->
+                    <li>
+                        <div class="collapsible-header"><i class="material-icons red-text">whatshot</i>BT5: Viết chương
+                            trình để tạo chuỗi bằng cách sử dụng ba ký tự ở
+                            giữa của một chuỗi có độ dài lẻ. Độ dài chuỗi phải lớn hơn hoặc bằng ba..</div>
+                        <div class="collapsible-body">
+                            <div class="row">
+                                <div class="input-field col s6">
+                                    <input placeholder="Placeholder" id="input5" type="text" class="validate">
+                                    <label for="input5">Vui lòng nhập một chuỗi kí tự có độ dài lẻ</label>
+                                </div>
+                                <div class="input-field col s6">
+                                    <input placeholder="Placeholder" id="output5" type="text" class="validate">
+                                    <label for="output5">Kết quả</label>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <!-- BT6 -->
+                    <li>
+                        <div class="collapsible-header"><i class="material-icons red-text">whatshot</i>BT6: Viết chương
+                            trình
+                            hiển thị số xuất hiện nhiều lần nhất trong mảng</div>
+                        <div class="collapsible-body">
+                            <div class="row">
+                                <div class="input-field col s6">
+                                    <input placeholder="Placeholder" id="input6" type="text" class="validate">
+                                    <label for="input6">Viết các số cách nhau bởi dấu chấm phẩy</label>
+                                </div>
+                                <div class="input-field col s6">
+                                    <input placeholder="Placeholder" id="output6" type="text" class="validate">
+                                    <label for="output6">Kết quả</label>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <!-- BT7 -->
+                    <li>
+                        <div class="collapsible-header"><i class="material-icons red-text">whatshot</i>BT7: kiểm tra xem
+                            chuỗi
+                            chứa &#39;java&#39; hay không</div>
+                        <div class="collapsible-body">
+                            <div class="row">
+                                <div class="input-field col s6">
+                                    <input placeholder="Placeholder" id="input7" type="text" class="validate">
+                                    <label for="input7">Viết các số cách nhau bởi dấu chấm phẩy</label>
+                                </div>
+                                <div class="input-field col s6">
+                                    <input placeholder="Placeholder" id="output7" type="text" class="validate">
+                                    <label for="output7">Kết quả</label>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <!-- BT8 -->
+                    <li>
+                        <div class="collapsible-header"><i class="material-icons red-text">whatshot</i>BT8: Viết một hàm
+                            để lấy
+                            tên tháng từ một số cụ thể ( ví dụ : 1 – Tháng một )</div>
+                        <div class="collapsible-body">
+                            <div class="row">
+                                <div class="input-field col s6">
+                                    <input placeholder="Placeholder" id="input8" type="text" class="validate">
+                                    <label for="input8">Vui lòng nhập một số trong khoảng 1 - 12</label>
+                                </div>
+                                <div class="input-field col s6">
+                                    <input placeholder="Placeholder" id="output8" type="text" class="validate">
+                                    <label for="output8">Kết quả</label>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <!-- BT9 -->
+                    <li>
+                        <div class="collapsible-header"><i class="material-icons red-text">whatshot</i>BT9: nhập một
+                            chuỗi và tìm
+                            từ dài nhất trong chuỗi</div>
+                        <div class="collapsible-body">
+                            <div class="row">
+                                <div class="input-field col s6">
+                                    <input placeholder="Placeholder" id="input9" type="text" class="validate">
+                                    <label for="input9">Vui lòng nhập bất kì chuỗi gì</label>
+                                </div>
+                                <div class="input-field col s6">
+                                    <input placeholder="Placeholder" id="output9" type="text" class="validate">
+                                    <label for="output9">Kết quả</label>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <!-- BT10 -->
+                    <li>
+                        <div class="collapsible-header"><i class="material-icons red-text">whatshot</i>BT10: nhập 2 số
+                            và in ra
+                            giá trị là số nguyên
+                            tố giữa 2 số đó</div>
+                        <div class="collapsible-body">
+                            <div class="row">
+                                <div class="input-field col s6">
+                                    <input placeholder="Placeholder" id="input10" type="text" class="validate">
+                                    <label for="input10">Viết 2 số cách nhau bởi dấu chấm phẩy</label>
+                                </div>
+                                <div class="input-field col s6">
+                                    <input placeholder="Placeholder" id="output10" type="text" class="validate">
+                                    <label for="output10">Kết quả</label>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- Footer -->
+        <div class="row">
+            <div class="col s12">
+                <footer class="page-footer">
+                    <div class="footer-copyright">
+                        <div class="container">
+                            Email: hovanvydut@gmail.com
+                            <a class="grey-text text-lighten-4 right" href="http://fb.com/hovanvydut">FB:
+                                fb.com/hovanvydut</a>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+        </div>
+    </div>
+    <script>
+        window.addEventListener("load", function () {
+            const loader = document.querySelector(".loading");
+            loader.className += " loading--hidden";
+        });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var elems = document.querySelectorAll('.collapsible');
+            var instances = M.Collapsible.init(elems);
+        });
+    </script>
+</body>
+
+</html>
